@@ -13,9 +13,6 @@ export default function Logo({ className = "" }) {
       >
         אזורה
       </span>
-      <span className="rounded-full border border-gold-400/30 bg-charcoal-950/70 px-2.5 py-1 text-[10px] font-bold tracking-[0.25em] text-neutral-200 backdrop-blur-sm">
-        VILLAS
-      </span>
     </a>
   );
 }
