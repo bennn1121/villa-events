@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { villas } from "../data/villas.js";
 import VillaCard from "./VillaCard.jsx";
 
-export default function VillasSection() {
+export default function AreasShowcase() {
   return (
     <section id="villas" className="relative bg-charcoal-950 py-28">
       <div className="section-container">
