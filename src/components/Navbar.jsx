@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo.jsx";
 
 const links = [
   { href: "#villas", label: "המתחמים" },
@@ -26,12 +27,7 @@ export default function Navbar() {
       }`}
     >
       <div className="section-container flex items-center justify-between">
-        <a href="#top" className="font-display text-2xl font-bold tracking-wide">
-          <span className="text-gold-gradient">אזורה</span>
-          <span className="mr-1 text-xs font-normal text-neutral-400">
-            VILLAS
-          </span>
-        </a>
+        <Logo />
 
         <nav className="hidden items-center gap-10 md:flex">
           {links.map((link) => (

@@ -1,3 +1,5 @@
+import Logo from "./Logo.jsx";
+
 const links = [
   { href: "#villas", label: "המתחמים" },
   { href: "#gallery", label: "גלריה" },
@@ -10,12 +12,7 @@ export default function Footer() {
     <footer className="border-t border-white/5 bg-charcoal-950 py-12">
       <div className="section-container flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-right">
         <div>
-          <a href="#top" className="font-display text-2xl font-bold">
-            <span className="text-gold-gradient">אזורה</span>
-            <span className="mr-1 text-xs font-normal text-neutral-500">
-              VILLAS
-            </span>
-          </a>
+          <Logo />
           <p className="mt-2 text-sm text-neutral-500">
             אירוח יוקרתי בסטנדרט בינלאומי, בלב ישראל.
           </p>

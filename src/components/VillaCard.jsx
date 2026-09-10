@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { BedDouble, Users, MapPin } from "lucide-react";
 
-export default function VillaCard({ villa, index }) {
+export default function VillaCard({ villa, index, onOpen }) {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -39,8 +39,14 @@ export default function VillaCard({ villa, index }) {
         ref={ref}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
+        onClick={() => onOpen?.(villa)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") onOpen?.(villa);
+        }}
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="relative overflow-hidden rounded-2xl border border-white/10 bg-charcoal-850 shadow-gold-lg"
+        className="relative cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-charcoal-850 shadow-gold-lg"
       >
         <div className="relative h-72 w-full overflow-hidden">
           <img
@@ -97,12 +103,16 @@ export default function VillaCard({ villa, index }) {
             ))}
           </div>
 
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpen?.(villa);
+            }}
             className="mt-6 inline-block w-full rounded-full border border-gold-400/40 py-3 text-center text-sm font-semibold text-gold-300 transition-colors hover:bg-gold-gradient hover:text-charcoal-950"
           >
-            בקשת הצעת מחיר
-          </a>
+            צפייה בפרופיל הווילה
+          </button>
         </div>
       </motion.div>
     </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
+import { WHATSAPP_NUMBER } from "../data/whatsapp.js";
 
-const WHATSAPP_NUMBER = "972500000000";
 const DEFAULT_MESSAGE = "שלום, אשמח לשמוע פרטים על השכרת וילת אירוח";
 
 export default function WhatsAppButton() {

@@ -1,8 +1,12 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { villas } from "../data/villas.js";
 import VillaCard from "./VillaCard.jsx";
+import VillaModal from "./VillaModal.jsx";
 
 export default function AreasShowcase() {
+  const [selectedVilla, setSelectedVilla] = useState(null);
+
   return (
     <section id="villas" className="relative bg-charcoal-950 py-28">
       <div className="section-container">
@@ -28,10 +32,17 @@ export default function AreasShowcase() {
 
         <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {villas.map((villa, index) => (
-            <VillaCard key={villa.id} villa={villa} index={index} />
+            <VillaCard
+              key={villa.id}
+              villa={villa}
+              index={index}
+              onOpen={setSelectedVilla}
+            />
           ))}
         </div>
       </div>
+
+      <VillaModal villa={selectedVilla} onClose={() => setSelectedVilla(null)} />
     </section>
   );
 }
